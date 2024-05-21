@@ -1,0 +1,6 @@
+---
+- name: Restart  service
+  ansible.builtin.systemd:
+    name: "{{ servicos }}"
+    state: restarted
+    enabled: yes

@@ -1,0 +1,5 @@
+---
+- name: crear plantilla
+  template:
+    src: script_2template.sql.j2  # Archivo de plantilla con variables
+    dest: "{{ destino }}"  # Ruta de destino del archivo generado

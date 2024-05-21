@@ -1,0 +1,5 @@
+---
+- name: Start the cluster
+  ansible.builtin.command:
+    cmd: pcs cluster start --all
+  

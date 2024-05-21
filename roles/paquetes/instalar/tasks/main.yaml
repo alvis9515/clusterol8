@@ -1,0 +1,4 @@
+- name: Install a list of packages (suitable replacement for 2.11 loop deprecation warning)
+  ansible.builtin.yum:
+    name: "{{ packages_to_install }}"
+    state: present

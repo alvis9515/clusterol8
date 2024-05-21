@@ -1,0 +1,6 @@
+---
+- name: Change password for user
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    password: "{{ user_password }}"
+    update_password: always

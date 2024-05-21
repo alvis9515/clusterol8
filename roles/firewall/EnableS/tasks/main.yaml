@@ -1,0 +1,5 @@
+- name: permit traffic in default zone for https service
+  ansible.posix.firewalld:
+    service: "{{ Aservicio }}"
+    permanent: true
+    state: enabled
