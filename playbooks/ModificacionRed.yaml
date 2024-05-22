@@ -1,5 +1,5 @@
 - name: Ejecucion de script
-  hosts: node1_HA
+  hosts: node2_HA
   become: true
   vars:
     hwaddr: "08:00:27:1c:9d:04"
