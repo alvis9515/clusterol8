@@ -1,0 +1,6 @@
+- name: Ejecucion de script
+  hosts: node1_HA
+  become: true
+  roles:
+    - role: roles/Red/backup_M
+    #- role: roles/Descargarscript
