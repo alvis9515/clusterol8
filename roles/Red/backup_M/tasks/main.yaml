@@ -6,7 +6,7 @@
     backup: true
 
 - name: Configure network interface
-  ini_file:
+  community.general.ini_file:
     path: /etc/sysconfig/network-scripts/ifcfg-enp0s3  # Cambia esto por el nombre de tu interfaz
     section: ""
     option: "{{ item.option }}"
