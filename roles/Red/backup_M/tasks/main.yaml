@@ -3,7 +3,7 @@
   copy:
     src: /etc/sysconfig/network-scripts/ifcfg-enp0s3  # Cambia esto por el nombre de tu interfaz
     dest: /etc/sysconfig/network-scripts/backup_ifcfg-enp0s3_{{ ansible_date_time.iso8601 }}
-    backup: true
+    remote_src: true
 
 - name: Configure network interface
   community.general.ini_file:
