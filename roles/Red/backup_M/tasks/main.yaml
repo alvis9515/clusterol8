@@ -20,7 +20,7 @@
     - { option: "IPV6_AUTOCONF", value: "no" }
     - { option: "IPV6_DEFROUTE", value: "no" }
     - { option: "IPV6_FAILURE_FATAL", value: "no" }
-    - { option: "IPADDR", value: "192.168.73.73" }
+    - { option: "IPADDR", value: "192.168.73.220" }
     - { option: "NETMASK", value: "255.255.255.0" }
     - { option: "GATEWAY", value: "192.168.73.1" }
     - { option: "DNS1", value: "192.168.73.1" }
