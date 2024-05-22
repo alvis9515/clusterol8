@@ -1,6 +1,19 @@
 - name: Ejecucion de script
   hosts: node1_HA
   become: true
+  vars:
+    hwaddr: "08:00:27:1c:9d:04"
+    bootproto: "none"
+    peerdns: "yes"
+    peeroutes: "yes"
+    ipv6init: "no"
+    ipv6_autoconf: "no"
+    ipv6_defroute: "no"
+    ipv6_failure_fatal: "no"
+    ipaddr: "192.168.73.221"
+    netmask: "255.255.255.0"
+    gateway: "192.168.73.1"
+    dns1: "192.168.73.1"
   roles:
     - role: roles/Red/backup_M
     #- role: roles/Descargarscript
