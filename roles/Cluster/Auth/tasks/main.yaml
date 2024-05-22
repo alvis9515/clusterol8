@@ -1,0 +1,10 @@
+- name: Authenticate pcs host
+  ansible.builtin.expect:
+    command: pcs host auth {{ node1_hostname }} {{ node2_hostname }} -u {{ hacluster_user }}
+    responses:
+      (?i)password: "{{ hacluster_password }}"
+  register: auth_output
+
+- name: Debug auth output
+  debug:
+    var: auth_output

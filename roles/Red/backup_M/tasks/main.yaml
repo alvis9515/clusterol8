@@ -1,0 +1,27 @@
+---
+- name: Backup the network interface configuration
+  copy:
+    src: /etc/sysconfig/network-scripts/ifcfg-enp0s3  # Cambia esto por el nombre de tu interfaz
+    dest: /etc/sysconfig/network-scripts/backup_ifcfg-enp0s3_{{ ansible_date_time.iso8601 }}
+    backup: true
+
+- name: Configure network interface
+  ini_file:
+    path: /etc/sysconfig/network-scripts/ifcfg-enp0s3  # Cambia esto por el nombre de tu interfaz
+    section: ""
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  loop:
+    - { option: "HWADDR", value: "08:00:27:e3:09:45" }
+    - { option: "BOOTPROTO", value: "none" }
+    - { option: "PEERDNS", value: "yes" }
+    - { option: "PEERROUTES", value: "yes" }
+    - { option: "IPV6INIT", value: "no" }
+    - { option: "IPV6_AUTOCONF", value: "no" }
+    - { option: "IPV6_DEFROUTE", value: "no" }
+    - { option: "IPV6_FAILURE_FATAL", value: "no" }
+    - { option: "IPV6_ADDR_GEN_MODE", value: "eui64" }
+    - { option: "IPADDR", value: "192.168.73.73" }
+    - { option: "NETMASK", value: "255.255.255.0" }
+    - { option: "GATEWAY", value: "192.168.73.1" }
+    - { option: "DNS1", value: "192.168.73.1" }
