@@ -2,18 +2,19 @@
   hosts: node2_HA
   become: true
   vars:
-    hwaddr: "08:00:27:1c:9d:04"
-    bootproto: "none"
-    peerdns: "yes"
-    peeroutes: "yes"
-    ipv6init: "no"
-    ipv6_autoconf: "no"
-    ipv6_defroute: "no"
-    ipv6_failure_fatal: "no"
-    ipaddr: "192.168.73.221"
-    netmask: "255.255.255.0"
-    gateway: "192.168.73.1"
-    dns1: "192.168.73.1"
+    network_config:
+      - { key: "HWADDR", value: "08:00:27:1c:9d:04" }
+      - { key: "BOOTPROTO", value: "none" }
+      - { key: "PEERDNS", value: "yes" }
+      - { key: "PEERROUTES", value: "yes" }
+      - { key: "IPV6INIT", value: "no" }
+      - { key: "IPV6_AUTOCONF", value: "no" }
+      - { key: "IPV6_DEFROUTE", value: "no" }
+      - { key: "IPV6_FAILURE_FATAL", value: "no" }
+      - { key: "IPADDR", value: "192.168.73.221" }
+      - { key: "NETMASK", value: "255.255.255.0" }
+      - { key: "GATEWAY", value: "192.168.73.1" }
+      - { key: "DNS1", value: "192.168.73.1" }
   roles:
     - role: roles/Red/backup_M
     #- role: roles/Descargarscript

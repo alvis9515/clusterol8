@@ -6,6 +6,9 @@
     remote_src: true
 
 - name: Configure network interface
-  template:
-    src: templates/ifcfg-enp0s3.j2
-    dest: /etc/sysconfig/network-scripts/ifcfg-enp0s3
+  lineinfile:
+    path: /etc/sysconfig/network-scripts/ifcfg-enp0s3  # Cambia esto por el nombre de tu interfaz
+    regexp: '^{{ item.key }}='
+    line: '{{ item.key }}={{ item.value }}'
+    state: present
+  loop: "{{ network_config }}"
